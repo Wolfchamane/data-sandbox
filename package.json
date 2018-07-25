@@ -1,0 +1,28 @@
+{
+  "name": "data-sandbox",
+  "version": "0.0.0-alpha",
+  "description": "Sandbox tool for any front-end development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wolfchamane/data-sandbox.git"
+  },
+  "keywords": [
+    "sandbox",
+    "tool",
+    "nodejs",
+    "front-end",
+    "rest",
+    "data"
+  ],
+  "author": "Arturo Martínez <arturo.martinez@wolfchamane.com>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Wolfchamane/data-sandbox/issues"
+  },
+  "homepage": "https://github.com/Wolfchamane/data-sandbox#readme",
+  "private": true
+}
