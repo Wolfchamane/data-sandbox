@@ -1,7 +1,16 @@
 const DataSandboxModelsTypeBase = require('./_base');
 
+/**
+ * Handles string values.
+ * @namespace   data-sandbox.models.type
+ * @class       data-sandbox.models.type.String
+ * @extends     data-sandbox.models.type.Base
+ */
 class DataSandboxModelsTypeString extends DataSandboxModelsTypeBase
 {
+    /**
+     * @constructor
+     */
     constructor()
     {
         super(...arguments);
@@ -18,7 +27,9 @@ class DataSandboxModelsTypeString extends DataSandboxModelsTypeBase
         super._randomizeValue();
         if (!this.value)
         {
-            this.value = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(this.minLength, this.maxLength);
+            this.value = Math.random().toString(36)
+                .replace(/[^a-z]+/g, '')
+                .substr(this.minLength, this.maxLength);
         }
     }
 }
