@@ -3,7 +3,7 @@ env:
     jest: true
 
 extends:
-    - eslint:recommended
+- eslint:recommended
 
 globals:
     require: true
@@ -13,9 +13,27 @@ globals:
     Promise: true
     Symbol: true
 
+parser: babel-eslint
+
+parserOptions:
+    sourceType: module
+    ecmaVersion: 8
+    ecmaFeatures:
+        jsx: true
+        modules: true
+        experimentalObjectRestSpread: true
+
 rules:
-    array-callback-return: 2                # enforces return statements in callbacks of array’s methods
     array-bracket-newline: [2, consistent]  # enforces line breaks after opening and before closing array brackets
+    array-bracket-spacing:                  # enforces return statements in callbacks of array’s methods
+        - 2
+        - never
+        - arraysInArrays : true
+          objectsInArrays : true
+    array-callback-return: 2                # enforces return statements in callbacks of array’s methods
+    array-element-newline:                  # enforces return statements in callbacks of array’s methods
+        - 0
+        - minItems: 5
     arrow-body-style: [2, as-needed]        # require braces in arrow function body
     arrow-parens: [2, as-needed]            # require parens in arrow function arguments
     arrow-spacing: 2                        # require space before/after arrow function’s arrow
@@ -30,6 +48,7 @@ rules:
           after: true
     comma-style: [2, last]                  # enforce one true comma style
     complexity: [1, 15]                     # specify the maximum cyclomatic complexity allowed in a program
+    computed-property-spacing: 0            # disallow or enforce spaces inside of computed properties
     consistent-return: 2                    # require return statements to either always or never specify values
     consistent-this: [2, "self"]            # enforces consistent naming when capturing the current execution context
     curly: 2                                # specify curly brace conventions for all control statements
@@ -42,6 +61,7 @@ rules:
         - 2
         - always
         - includeCommonJSModuleExports: true
+    function-paren-newline: [0, multiline]  # enforces consistent line breaks inside function parentheses
     generator-star-spacing: [2, after]      # enforce spacing around the * in generator functions
     getter-return: 2                        # enforce that a return statement is present in property getters
     global-require: 2                       # enforce require() on the top-level module scope
@@ -50,6 +70,7 @@ rules:
         - 2
         - 4
         - SwitchCase: 1
+    jsx-quotes: [2, prefer-double]          # enforce the consistent use of either double or single quotes in JSX attributes
     key-spacing:                            # enforces spacing between keys and values in object literal properties
         - 2
         - align: colon
@@ -109,6 +130,7 @@ rules:
     no-lone-blocks: 2                       # disallow unnecessary nested blocks
     no-lonely-if: 2                         # disallow if as the only statement in an else block
     no-loop-func: 2                         # disallow function declarations and expressions inside loop statements
+    no-mixed-operators: 2                   # disallow mixes of different operators
     no-multi-str: 2                         # disallow use of multiline strings
     no-multiple-empty-lines: 2              # disallow multiple empty lines
     no-native-reassign: 2                   # disallow reassignments of native objects
@@ -161,11 +183,11 @@ rules:
     object-curly-newline:                   # enforce consistent line breaks inside braces
         - 2
         - ObjectExpression:
-            consistent: true
-            multiline: true
+              consistent: true
+              multiline: true
           ObjectPattern:
-            minProperties: 5
-            multiline: true
+              minProperties: 5
+              multiline: true
     object-curly-spacing:                   # enforce consistent spacing inside braces
         - 2
         - always
@@ -194,7 +216,7 @@ rules:
     prefer-const: 2                         # suggest using const
     prefer-numeric-literals: 2              # disallow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
     prefer-promise-reject-errors: 2         # require using Error objects as Promise rejection reasons
-    prefer-rest-params: 2                   # suggest using the rest parameters instead of arguments
+    prefer-rest-params: 0                   # suggest using the rest parameters instead of arguments
     prefer-spread: 2                        # suggest using the spread operator instead of .apply()
     prefer-template: 2                      # suggest using template literals instead of string concatenation
     quotes:                                 # specify whether double or single quotes should be used
@@ -203,15 +225,15 @@ rules:
         - allowTemplateLiterals: true
           avoidEscape: true
     radix: 2                                # require use of the second argument for parseInt()
-    require-await: 2                        # disallow async functions which have no await expression
+    require-await: 0                        # disallow async functions which have no await expression
     require-jsdoc:                          # require JSDoc comments
         - 2
         - require:
-            ArrowFunctionExpression: false
-            ClassDeclaration: true
-            FunctionDeclaration: true
-            FunctionExpression: true
-            MethodDefinition: true
+              ArrowFunctionExpression: false
+              ClassDeclaration: true
+              FunctionDeclaration: true
+              FunctionExpression: true
+              MethodDefinition: true
     rest-spread-spacing: 2                  # enforce spacing between rest and spread operators and their expressions
     semi: 2                                 # require or disallow use of semicolons instead of ASI
     semi-spacing:
@@ -244,13 +266,13 @@ rules:
     valid-jsdoc:                            # ensure JSDoc comments are valid
         - 2
         - prefer:
-            returns: return
+              returns: return
           preferType:
-            array: Array
-            boolean: Boolean
-            number: Number
-            object: Object
-            string: String
+              array: Array
+              boolean: Boolean
+              number: Number
+              object: Object
+              string: String
           requireReturn: false
           requireReturnType: true
     wrap-iife: [2, inside]                  # require immediate function invocation to be wrapped in parentheses
