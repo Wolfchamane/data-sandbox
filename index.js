@@ -1,3 +1,10 @@
+/* eslint-disable no-console */
+console.log(`data-sandbox Copyright (C) 2018 Arturo Martínez
+This program comes with ABSOLUTELY NO WARRANTY; for details type ????.
+This is free software, and you are welcome to redistribute it
+under certain conditions; type ??? for details.`);
+/* eslint-enable no-console */
+
 const path = require('path');
 const fs = require('fs');
 
