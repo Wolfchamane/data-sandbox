@@ -4,7 +4,9 @@
     "description": "Sandbox tool for any front-end development",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint --fix --ext .js src",
+        "start": "node index.js"
     },
     "repository": {
         "type": "git",
@@ -26,6 +28,7 @@
     "homepage": "https://github.com/Wolfchamane/data-sandbox#readme",
     "private": true,
     "devDependencies": {
+        "babel-eslint": "^8.2.6",
         "eslint": "^5.2.0"
     }
 }
