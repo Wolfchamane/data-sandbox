@@ -20,7 +20,14 @@ module.exports = class DataSandboxModelsInstance
      */
     constructor(config)
     {
+        /**
+         * This model instance configuration
+         * @property    $config
+         * @protected
+         * @type        {Object}
+         */
         this.$config = config;
+
         this._buildKeyModels();
     }
 
@@ -30,7 +37,7 @@ module.exports = class DataSandboxModelsInstance
      */
     _buildKeyModels()
     {
-        const config = this._config;
+        const config = this.$config;
         Object.keys(config).forEach(
             key =>
             {
