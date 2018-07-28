@@ -1,6 +1,11 @@
 const http = require('http');
 const pathReplace = require('../utils/_path-replace');
 
+/**
+ * Handles a micro-server instance
+ * @namespace   data-sandbox.engine
+ * @class       data-sandbox.engine.MicroServer
+ */
 module.exports = class DataSandboxMicroServerEngine
 {
     /**
@@ -63,6 +68,7 @@ module.exports = class DataSandboxMicroServerEngine
 
     /**
      * Evaluates if requested path exists or not
+     * @param   {String}    req Path to test
      * @return  {Boolean}   `true` if path exists for endpoint instance
      */
     _pathExists(req = '')
